@@ -1,0 +1,13 @@
+# Excel lock / temp files
+~$*
+*.tmp
+
+# macOS
+.DS_Store
+
+# Python
+__pycache__/
+*.pyc
+
+# CSVs written by tools/generate_data.py (regenerate any time)
+data/

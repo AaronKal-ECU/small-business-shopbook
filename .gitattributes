@@ -1,0 +1,11 @@
+* text=auto
+
+# Keep VBA exports byte-for-byte (CRLF) so they import cleanly into the VBA editor,
+# and tell GitHub to label them as VBA.
+*.bas -text linguist-language=VBA
+*.cls -text linguist-language=VBA
+
+# Office files and images are binary
+*.xlsm binary
+*.xlsx binary
+*.png  binary
