@@ -17,6 +17,7 @@ Today I revamped the project and released all the files under MIT licensing, so 
 A small shop with a few hundred transactions a quarter doesn't need a CRM, a database or an agent platform. It needs something the owners can open, read and fix themselves. One `.xlsm` file gives you:
 
 - **Zero infrastructure.** Nothing to host, patch or pay for.
+- **No technical ability required.** Aslong as you're used to Excel!
 - **Full transparency.** Every number is a formula you can click on.
 - **Offline by default.** The data stays on the owner's machine.
 - **Easy backups.** Copy one file.
