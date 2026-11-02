@@ -56,20 +56,6 @@ A small shop with a few hundred transactions a quarter doesn't need a CRM, a dat
 - **The macros only touch tables.** Every button goes through the `ListObject` API and finds columns by header name, so adding or moving a column can't break it.
 - **The Dashboard is dynamic arrays** (`FILTER`, `SORTBY`, `UNIQUE`, `TAKE`, `LET`) plus one pivot for customers.
 
-## The 2026 revamp: what was fixed
-
-The 2025 version worked day to day, but a proper review found these:
-
-| # | Problem in the 2025 version | Fix |
-|---|---|---|
-| 1 | **Stock count was wrong.** It read only the *first* delivery row per product, ignored the brand, and counted stock that had been ordered but not yet received. | Stock = RECEIVED orders − sales per Brand \| Size \| Product, as a live formula. |
-| 2 | **Prices and costs were hard-coded and inconsistent.** The macro used ×25, the table ×20, one order line ×1 instead of ×2; profit assumed every unit cost $2, and the order calculator had a fixed $62 fee. | Cost and Price per product in the catalogue; delivery fees, minimum order and partner share in a Settings table. |
-| 3 | **The delete macros could delete the header row.** The guard checked `lastRow <= 1`, but the header sits on row 3. | Deletes go through `ListRows` only, with a confirmation, so the header can't be touched. |
-| 4 | **New rows were pasted outside the tables.** Copying and pasting worksheet rows left formats, validation and formulas behind. | `ListRows.Add` with columns mapped by header; order totals are a formula. |
-| 5 | **Leftovers:** two broken `#REF!` names, a dead conditional format, hard-coded ranges, stray `Option Explicit` lines and typos in sheet and table names. | Removed, replaced with table references, and renamed. |
-| 6 | **Adding a product meant re-pointing named ranges by hand.** The dropdowns used 17 hand-made names (`DV_<Brand>_<Size>`) over fixed cell blocks and broke if the catalogue was re-sorted. | One dynamic list driven by the catalogue's `Key` column. The 17 names became 5 generated spill references, and catalogue order no longer matters. |
-| 7 | **Withdrawals reset the till.** Each new withdrawal stamped *all cash sales ever* as the opening balance, ignoring earlier withdrawals. | Till Before = cash sales up to that date − earlier withdrawals, as a formula that re-flows if an old row is edited. |
-
 ## Getting started
 
 1. Download [`small-business-shopbook.xlsm`](small-business-shopbook.xlsm) and open it in **Microsoft 365 Excel** (Windows or Mac). The dashboard formulas (`TAKE`, `LET`, `XMATCH`) need 365.
@@ -78,19 +64,6 @@ The 2025 version worked day to day, but a proper review found these:
 4. If the buttons or the customer pivot are ever missing, run the `SetupShopbook` macro (Tools → Macro → Macros…). It rebuilds them.
 
 To make it your own, clear the sample rows from the tables, put your products in the Catalogue, and set your fees and partner share in **Catalogue → Settings**.
-
-## Repo layout
-
-```
-small-business-shopbook.xlsm   the workbook (synthetic data)
-src/                           VBA exported from the workbook
-  modShopbook.bas              day-to-day macros + edit hooks
-  modSetup.bas                 one-click setup: buttons + customer pivot
-  ThisWorkbook.cls             workbook event that routes table edits
-tools/generate_data.py         seeded synthetic data generator
-docs/images/                   one screenshot per sheet
-BUILD-WITH-AI.md               build your own shopbook with an AI assistant
-```
 
 Regenerate the sample data with `python tools/generate_data.py`, which writes CSVs to `data/`.
 
