@@ -1,14 +1,16 @@
 # Small Business Shopbook
 
-**A small business run from one Excel workbook:** stock, supplier orders, sales, customers, cashflow, profit and a two-partner profit split. It's local-first and offline, with no server, subscription or database. 
-### The data never leaves the machine. no apps needed just one excel document.
+**A small business run from one Excel workbook:** stock, supplier orders, sales, customers, cashflow, profit and a two-partner profit split. It's local-first and offline, with no server, subscription or database.
+
+### The data never leaves the machine. No apps needed, just one Excel document.
 
 ![Dashboard](docs/images/dashboard.png)
 
-I built the first version in mid-2025, for a small Perth business that needed to track one product line seperate to the inventroy software they already used. this solution allowed them to track profits and orders successfully for months, and all it took was one excel document, no fancy AI connectors, expensive subscriptions or technically complex parts, just one excel docuemnt.
+I built the first version in mid-2025 for a small Perth business that needed to track one product line separately from the inventory software they already used. It let them track profits and orders successfully for months, and all it took was one Excel document: no fancy AI connectors, expensive subscriptions or technically complex parts.
 
-Today I revamped the project and released all the files under MIT licensing, so you can make it yourself, just give this repo to an AI agent and they can setup your own personalised shopbook for your business! See [BUILD-WITH-AI.md](BUILD-WITH-AI.md) for more info!
-> **All data in this workbook is synthetic.** The original product line is swapped for automotive dash and audio fit-out parts
+In 2026 I revamped the project and released all the files under the MIT licence, so you can make it yourself: give this repo to an AI agent and it can set up a personalised shopbook for your business. See [BUILD-WITH-AI.md](BUILD-WITH-AI.md) for more info.
+
+> **All data in this workbook is synthetic.** The original product line is swapped for automotive dash and audio fit-out parts.
 
 ---
 
@@ -17,7 +19,7 @@ Today I revamped the project and released all the files under MIT licensing, so 
 A small shop with a few hundred transactions a quarter doesn't need a CRM, a database or an agent platform. It needs something the owners can open, read and fix themselves. One `.xlsm` file gives you:
 
 - **Zero infrastructure.** Nothing to host, patch or pay for.
-- **No technical ability required.** Aslong as you're used to Excel!
+- **No technical ability required.** As long as you're used to Excel.
 - **Full transparency.** Every number is a formula you can click on.
 - **Offline by default.** The data stays on the owner's machine.
 - **Easy backups.** Copy one file.
