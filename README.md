@@ -5,8 +5,9 @@
 
 ![Dashboard](docs/images/dashboard.png)
 
-I built the first version in mid-2025, for a small Perth business that needed to track one product line on its own books. But they used outdated software and were not technically literate, this solution allowed them to track profits and orders successfully for months, and all it took was one excel document, no fancy AI connectors, complicated programs and most importantly its all free. Today I revamped the project and released all the files under MIT licensing, so you can make it yourself, just give this repo to an AI agent and they can setup your own personalised shopbook for your business! See [BUILD-WITH-AI.md](BUILD-WITH-AI.md) for more info!
+I built the first version in mid-2025, for a small Perth business that needed to track one product line seperate to the inventroy software they already used. this solution allowed them to track profits and orders successfully for months, and all it took was one excel document, no fancy AI connectors, expensive subscriptions or technically complex parts, just one excel docuemnt.
 
+Today I revamped the project and released all the files under MIT licensing, so you can make it yourself, just give this repo to an AI agent and they can setup your own personalised shopbook for your business! See [BUILD-WITH-AI.md](BUILD-WITH-AI.md) for more info!
 > **All data in this workbook is synthetic.** The original product line is swapped for automotive dash and audio fit-out parts
 
 ---
